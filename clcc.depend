@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1293161438 source:/home/leith/code/clcc/clcc.c
+	<assert.h>
+	<stdlib.h>
+	<stdio.h>
+	<dlfcn.h>
+	<sys/stat.h>
+	<sys/types.h>
+	<string.h>
+
