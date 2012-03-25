@@ -73,23 +73,25 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-
-    printf("Building...\n");
-
     strings[0] = source;
     lengths[0] = strlen(source);
     result = NvCliCompileProgram(strings, count, lengths, options, &log, &binary);
-
-    if (log != NULL)
-    {
-        printf("\n%s", log); // TODO: replace <program source> with better one (like the drivers do)
-        NvCliCompileLogFree(log);
-    }
-
+    
     if (result != 0)
     {
-        fprintf(stderr, "Build failed!\n");
+        //printf("\n%s", log); // TODO: replace <program source> with better one (like the drivers do)
+         
+        char* temp;
+        temp = strtok (log,"\n");
+         while (temp != NULL)
+  	    {
+  	    	if(temp[0] == ':') printf("%s", sourceFilename);	
+    		printf ("%s\n",temp);
+    		temp = strtok (NULL, "\n");    	
+    	}	
+        NvCliCompileLogFree(log);
         exit(EXIT_FAILURE);
+        
     }
     assert(binary != NULL);
 
@@ -107,8 +109,6 @@ int main(int argc, char **argv)
         perror(binaryFilename);
         exit(EXIT_FAILURE);
     }
-
-    printf("Build succeeded!\n");
 
     free(source);
     fclose(sourceFile);
