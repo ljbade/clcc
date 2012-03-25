@@ -22,5 +22,16 @@ Currently I only support one input per PTX file, but the API supports multiple i
 
 Try it out, test it, use it etc. and give me feedback, bugs, suggestions etc.
 
+BUILDING:
+This version worked on Windows when I wrote it (back in December 2010) with the then current NVIDIA drivers.
+
+I did test this code on Linux without any problems too but it might have needed a little tweaking and I can't find the source code from when I compiled it on Linux.
+
+The files include both Visual Studio 2008 for Windows build, and a Code Blocks project for Linux build.
+
+If you get it working OK with current drivers for Linux please send me any changes and a Makefile if you created one and I will add it to git.
+
+I will have a go at testing it on a spare Linux PC next week as well as on Windows to see if it needs fixing.
+
 Feel free to discuss on the NVIDIA forums:
 http://forums.nvidia.com/index.php?showtopic=188884
