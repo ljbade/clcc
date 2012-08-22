@@ -9,13 +9,15 @@
 
 int main(int argc, char **argv)
 {
-    //const char source[] = "__kernel svoid test(__global int *input, __global int *output) { int i = get_global_id(0); output[i] = input[i]; }";
+	// Some test arguments:
+    // const char source[] = "__kernel void test(__global int *input, __global int *output) { int i = get_global_id(0); output[i] = input[i]; }";
+    // const char options[] = "-cl-nv-verbose -cl-nv-arch sm_12 -cl-nv-cstd=CL1.0";
+    // const char *strings[] = { source };
+    // const size_t lengths[] = { sizeof(source) };
+
     char *source;
-    //const char options[] = "-cl-nv-verbose -cl-nv-arch sm_12 --cl-nv-cstd=CL1.0";
     char *options;
-    //const char *strings[] = { source };
     const char *strings[1];
-    //const size_t lengths[] = { sizeof(source) };
     size_t lengths[1];
     const unsigned int count = 1;
     char *binary = NULL;
@@ -58,7 +60,7 @@ int main(int argc, char **argv)
         exit(EXIT_FAILURE);
     }
 
-    source = malloc(sourceStat.st_size + 1);
+    source = (char *)malloc(sourceStat.st_size + 1);
     if (source == NULL)
     {
         fprintf(stderr, "malloc: Unable to allocate memory for source file.");
@@ -83,7 +85,7 @@ int main(int argc, char **argv)
          
         char* temp;
         temp = strtok (log,"\n");
-         while (temp != NULL)
+        while (temp != NULL)
   	    {
   	    	if(temp[0] == ':') printf("%s", sourceFilename);	
     		printf ("%s\n",temp);
@@ -91,7 +93,6 @@ int main(int argc, char **argv)
     	}	
         NvCliCompileLogFree(log);
         exit(EXIT_FAILURE);
-        
     }
     assert(binary != NULL);
 

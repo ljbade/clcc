@@ -40,7 +40,7 @@ void print_error()
         (LPSTR)&message,
         0,
         NULL);
-#ifdef WIN64
+#ifdef _WIN64
     fprintf(stderr, "nvcompiler.dll: %s\n", message);
 #else
     fprintf(stderr, "nvcompiler32.dll: %s\n", message);
@@ -55,7 +55,7 @@ void load_compiler()
         return;
     }
 
-#ifdef WIN64
+#ifdef _WIN64
     nvcompiler = LoadLibrary("nvcompiler.dll");
 #else 
     nvcompiler = LoadLibrary("nvcompiler32.dll");
