@@ -56,7 +56,7 @@ void load_compiler()
         exit(EXIT_FAILURE);
     }
 
-    pNvCliCompiledProgramFree = tNvCliCompiledProgramFree*) dlsym(libnvidiacompiler, "NvCliCompiledProgramFree");
+    pNvCliCompiledProgramFree = (tNvCliCompiledProgramFree*) dlsym(libnvidiacompiler, "NvCliCompiledProgramFree");
     if (pNvCliCompiledProgramFree == NULL)
     {
         fprintf(stderr, "%s\n", dlerror());
