@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-   //const char source[] = "__kernel svoid test(__global int *input, __global int *output) { int i = get_global_id(0); output[i] = input[i]; }";
+    //const char source[] = "__kernel svoid test(__global int *input, __global int *output) { int i = get_global_id(0); output[i] = input[i]; }";
     char *source;
     //const char options[] = "-cl-nv-verbose -cl-nv-arch sm_12 --cl-nv-cstd=CL1.0";
     char *options;

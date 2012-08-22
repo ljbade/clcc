@@ -2,6 +2,8 @@
 
 #include "compiler.h"
 
+extern void load_compiler();
+
 extern tNvCliCompileProgram pNvCliCompileProgram;
 extern tNvCliCompileLogFree pNvCliCompileLogFree;
 extern tNvCliCompiledProgramFree pNvCliCompiledProgramFree;
@@ -15,11 +17,11 @@ int NvCliCompileProgram(const char **sourceStrings, unsigned int sourceStringsCo
 void NvCliCompileLogFree(const char *compileLog)
 {
     load_compiler();
-    return pNvCliCompileLogFree(compileLog);
+    pNvCliCompileLogFree(compileLog);
 }
 
 void NvCliCompiledProgramFree(const char *compiledProgram)
 {
     load_compiler();
-    return pNvCliCompiledProgramFree(compiledProgram);
+    pNvCliCompiledProgramFree(compiledProgram);
 }

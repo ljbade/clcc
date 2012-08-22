@@ -10,7 +10,7 @@ tNvCliCompileLogFree pNvCliCompileLogFree;
 tNvCliCompiledProgramFree pNvCliCompiledProgramFree;
 int loaded = 0;
 
-void unload_compiler()
+void unload_compiler(void)
 {
     if (!loaded)
     {

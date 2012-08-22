@@ -12,8 +12,8 @@ The format of the command is this:
 clcc ["build-options"] input.cl output.ptx
 "build-options" - a quoted string containing the build options to pass to the NVIDIA compiler (equivalent to clBuildProgram's options string).
 It accepts all the OpenCL 1.0/1.1 clBuildProgram options (http://www.khronos.org/registry/cl/sdk/1.1/docs/man/xhtml/clBuildProgram.html), the NVIDIA extended ones from cl_nv_compiler_options (http://developer.download.nvidia.com/compute/cuda/3_2_prod/toolkit/docs/OpenCL_Extensions/cl_nv_compiler_options.txt), and these hidden extras:
--cl-nv-arch sm_XX - selects the target CUDA Compute Level architecture to compile for (sm_10 for 1.0, sm_11 for 1.1, sm_12 for 1.2, sm_13 for 1.3 and sm_20 for 2.0 (Fermi))
---cl-nv-cstd=CLX.X - selects the target OpenCL C language version (CL1.0 or CL1.1)
+-cl-nv-arch sm_XX - selects the target CUDA Compute Level architecture to compile for (sm_10 for 1.0, sm_11 for 1.1, sm_12 for 1.2, sm_13 for 1.3, sm_20 for 2.0, sm_21 for 2.1, sm_30 for 3.0 and sm_35 for 3.5)
+--cl-nv-cstd=CLX.X - selects the target OpenCL C language version (CL1.0, CL1.1 or CL1.2)
 (there may be others)
 input.cl - the source OpenCL C file
 output.ptx - the destination PTX file

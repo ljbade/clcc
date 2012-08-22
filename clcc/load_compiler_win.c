@@ -10,11 +10,11 @@ tNvCliCompileLogFree pNvCliCompileLogFree;
 tNvCliCompiledProgramFree pNvCliCompiledProgramFree;
 int loaded = 0;
 
-void unload_compiler()
+int unload_compiler(void)
 {
     if (!loaded)
     {
-        return;
+        return 0;
     }
 
     pNvCliCompileProgram = NULL;
@@ -25,6 +25,8 @@ void unload_compiler()
     nvcompiler = NULL;
 
     loaded = 0;
+
+	return 0;
 }
 
 void print_error()
@@ -35,7 +37,7 @@ void print_error()
         NULL,
         GetLastError(),
         0,
-        &message,
+        (LPSTR)&message,
         0,
         NULL);
 #ifdef WIN64
