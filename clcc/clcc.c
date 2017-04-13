@@ -46,7 +46,7 @@ int main(int argc, char **argv)
         options = "";
     }
 
-    sourceFile = fopen(sourceFilename, "r");
+    sourceFile = fopen(sourceFilename, "r+b");
     if (sourceFile == NULL)
     {
         perror(sourceFilename);
@@ -97,7 +97,7 @@ int main(int argc, char **argv)
     assert(binary != NULL);
 
 
-    binaryFile = fopen(binaryFilename, "w");
+    binaryFile = fopen(binaryFilename, "w+b");
     if (binaryFile == NULL)
     {
         perror(binaryFilename);
