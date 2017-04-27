@@ -46,7 +46,7 @@ int main(int argc, char **argv)
         options = "";
     }
 
-    sourceFile = fopen(sourceFilename, "r+b");
+    sourceFile = fopen(sourceFilename, "rb");
     if (sourceFile == NULL)
     {
         perror(sourceFilename);
