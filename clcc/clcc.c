@@ -28,6 +28,31 @@ void usage()
     printf("\n");
     printf("-cl-nv-verbose\n");
     printf("\n");
+
+    // ??
+    printf("-cl-opt-disable\n");
+    printf("\n");
+    printf("-cl-single-precision-constant\n");
+    printf("\n");
+    printf("-cl-denorms-are-zero\n");
+    printf("\n");
+    printf("-cl-fp32-correctly-rounded-divide-sqrt\n");
+    printf("\n");
+    printf("-cl-mad-enable\n");
+    printf("\n");
+    printf("-cl-no-signed-zeros\n");
+    printf("\n");
+    printf("-cl-unsafe-math-optimizations\n");
+    printf("\n");
+    printf("-cl-finite-math-only\n");
+    printf("\n");
+    printf("-cl-fast-relaxed-math\n");
+    printf("\n");
+    // ?
+    
+    printf("-cl-nv-arch\n");
+    printf("\n");
+
     printf("-cl-nv-cstd=<version>\n");
     printf("   version is the OpenCL version supported such as CL1.0 or CL1.1 ");
     printf("\n");
