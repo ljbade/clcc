@@ -10,11 +10,11 @@ tNvCliCompileLogFree pNvCliCompileLogFree;
 tNvCliCompiledProgramFree pNvCliCompiledProgramFree;
 int loaded = 0;
 
-int unload_compiler(void)
+void unload_compiler(void)
 {
     if (!loaded)
     {
-        return 0;
+        return; // 0;
     }
 
     pNvCliCompileProgram = NULL;
@@ -26,7 +26,7 @@ int unload_compiler(void)
 
     loaded = 0;
 
-	return 0;
+	// return 0;
 }
 
 void print_error()
@@ -87,7 +87,8 @@ void load_compiler()
         exit(EXIT_FAILURE);
     }
 
-    _onexit(unload_compiler);
+    //_onexit(unload_compiler);
+    atexit(unload_compiler);
 
     loaded = 1;
 }
