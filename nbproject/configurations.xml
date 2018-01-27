@@ -17,10 +17,7 @@
         </df>
       </df>
       <df name="clcc">
-        <in>clcc.c</in>
-        <in>compiler.c</in>
-        <in>load_compiler_unx.c</in>
-        <in>load_compiler_win.c</in>
+        <in>OpenCLUtils.h</in>
       </df>
     </df>
     <logicalFolder name="Modules"
@@ -59,9 +56,9 @@
       </codeAssistance>
       <makefileType>
         <makeTool>
-          <buildCommandWorkingDir>.</buildCommandWorkingDir>
-          <buildCommand>./cmake_make.sh</buildCommand>
-          <cleanCommand>./cmake_make.sh clean</cleanCommand>
+          <buildCommandWorkingDir>build</buildCommandWorkingDir>
+          <buildCommand>${MAKE}</buildCommand>
+          <cleanCommand>${MAKE} clean</cleanCommand>
           <executablePath></executablePath>
         </makeTool>
         <preBuild>
@@ -106,28 +103,7 @@
           </incDir>
         </ccTool>
       </item>
-      <item path="clcc/clcc.c" ex="false" tool="0" flavor2="0">
-        <cTool>
-          <incDir>
-            <pElem>build/clcc</pElem>
-          </incDir>
-        </cTool>
-      </item>
-      <item path="clcc/compiler.c" ex="false" tool="0" flavor2="0">
-        <cTool>
-          <incDir>
-            <pElem>build/clcc</pElem>
-          </incDir>
-        </cTool>
-      </item>
-      <item path="clcc/load_compiler_unx.c" ex="false" tool="0" flavor2="0">
-        <cTool>
-          <incDir>
-            <pElem>build/clcc</pElem>
-          </incDir>
-        </cTool>
-      </item>
-      <item path="clcc/load_compiler_win.c" ex="false" tool="0" flavor2="2">
+      <item path="clcc/OpenCLUtils.h" ex="false" tool="3" flavor2="0">
       </item>
       <folder path="Modules">
         <cTool>
