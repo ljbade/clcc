@@ -5,9 +5,9 @@
 #include "compiler.h"
 
 void *libnvidiacompiler = NULL;
-tNvCliCompileProgram pNvCliCompileProgram;
-tNvCliCompileLogFree pNvCliCompileLogFree;
-tNvCliCompiledProgramFree pNvCliCompiledProgramFree;
+tNvCliCompileProgram* pNvCliCompileProgram;
+tNvCliCompileLogFree* pNvCliCompileLogFree;
+tNvCliCompiledProgramFree* pNvCliCompiledProgramFree;
 int loaded = 0;
 
 void unload_compiler(void)
