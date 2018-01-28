@@ -48,6 +48,9 @@ void parseOptions(int argc, char* argv[])
         }
     }
 
+    if (doHelp)
+        return;
+    
     if (sourceFilename == NULL)
     {
         fprintf(stderr, "No input file specified\n");
